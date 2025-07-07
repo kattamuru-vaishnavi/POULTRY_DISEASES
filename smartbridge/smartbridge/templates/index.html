@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poultry Detect - Home</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin: 0;
+    }
+    .navbar {
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      background-color: #111;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1em;
+    }
+    .main-content {
+      margin-top: 50px;
+    }
+    button {
+      background-color: #28a745;
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .images img {
+      width: 120px;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div><strong>🐓 Poultry Detect</strong></div>
+    <div>
+      <a href="{{ url_for('home') }}">HOME</a>
+      <a href="{{ url_for('predict_page') }}">PREDICTION_PAGE</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h2>Welcome to Poultry Health Hub,</h2>
+    <p>your comprehensive resource for poultry disease management and prevention.</p>
+
+    <a href="{{ url_for('predict_page') }}"><button>GET STARTED</button></a>
+
+    <div class="images">
+      <img src="{{ url_for('static', filename='img/coccidiosis.jpg') }}" alt="Coccidiosis">
+      <img src="{{ url_for('static', filename='img/infection2.jpg') }}" alt="Infection 2">
+      <img src="{{ url_for('static', filename='img/infection3.jpg') }}" alt="Infection 3">
+      <img src="{{ url_for('static', filename='img/farm.jpg') }}" alt="Farm">
+    </div>
+  </div>
+
+</body>
+</html>

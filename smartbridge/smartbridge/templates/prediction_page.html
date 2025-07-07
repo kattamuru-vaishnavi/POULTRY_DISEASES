@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poultry Detect - Prediction</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .navbar {
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      background-color: #111;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1em;
+    }
+    input[type="file"] {
+      padding: 10px;
+      width: 60%;
+      margin: 20px auto;
+    }
+    button {
+      background-color: #28a745;
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div><strong>🐓 Poultry Detect</strong></div>
+    <div>
+      <a href="{{ url_for('home') }}">HOME</a>
+      <a href="{{ url_for('predict_page') }}">PREDICTION_PAGE</a>
+    </div>
+  </div>
+
+  <h1>Prediction</h1>
+  <h2>Image Classification</h2>
+
+  <form method="POST" action="{{ url_for('predict') }}" enctype="multipart/form-data">
+    <label for="imageUpload">Upload Your Image:</label><br>
+    <input type="file" id="imageUpload" name="file" required><br>
+    <button type="submit">Predict</button>
+  </form>
+
+    <p>Hence, the infection type detected as <strong><em>{{ prediction }}</em></strong></p>
+ 
+
+</body>
+</html>
