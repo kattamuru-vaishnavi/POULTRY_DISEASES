@@ -87,5 +87,5 @@ Using a transfer learning model (CNN-based), this solution helps users:
 - Integrate voice input/output for accessibility
 - Continuous learning model with feedback loop
 
----
+
 
